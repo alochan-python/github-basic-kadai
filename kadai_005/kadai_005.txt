@@ -1,0 +1,69 @@
+test@testdir GitHub_Tutorial % mkdir git_challenge
+test@testdir GitHub_Tutorial % cd git_challenge
+test@testdir git_challenge % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /Users/nakamurakazumasa/Desktop/GitHub_Tutorial/git_challenge/.git/
+test@testdir git_challenge % echo ".DS_Store" >> .gitignore
+test@testdir git_challenge % touch hello_world.txt
+test@testdir git_challenge % git add .
+test@testdir git_challenge % git commit -m "1回目"
+[master (root-commit) 08437aa] 1回目
+ 2 files changed, 2 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 hello_world.txt
+test@testdir git_challenge % git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_world.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+test@testdir git_challenge % git diff
+diff --git a/hello_world.txt b/hello_world.txt
+index 5dd01c1..8ee003c 100644
+--- a/hello_world.txt
++++ b/hello_world.txt
+@@ -1 +1,2 @@
+-Hello, world!
+\ No newline at end of file
++Hello, world!
++こんにちは、世界！
+test@testdir git_challenge % git add hello_world.txt
+test@testdir git_challenge % git diff --staged
+diff --git a/hello_world.txt b/hello_world.txt
+index 5dd01c1..8ee003c 100644
+--- a/hello_world.txt
++++ b/hello_world.txt
+@@ -1 +1,2 @@
+-Hello, world!
+\ No newline at end of file
++Hello, world!
++こんにちは、世界！
+test@testdir git_challenge % git commit -m "日本語訳を追記"
+[master 86e4d1a] 日本語訳を追記
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+test@testdir git_challenge % git log
+commit 86e4d1a8786e20e1e8a9920e3335fef836e765c5 (HEAD -> main)
+Author: alochan <kazu_naka_kazumasa17@yahoo.co.jp>
+Date:   Sat Apr 11 20:20:12 2026 +0900
+
+    日本語訳を追記
+
+commit 08437aaf4d478ab57620b5e198b1ca43a76358c7
+Author: alochan <kazu_naka_kazumasa17@yahoo.co.jp>
+Date:   Sat Apr 11 19:38:32 2026 +0900
+
+    1回目
